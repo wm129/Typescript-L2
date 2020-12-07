@@ -41,17 +41,20 @@ export const dogapiReducer = (state = initialState, action) => {
                 isLoading: false,
                 dogimg: action.payload
             };
-            case 'FETCH_IND_ERR': 
+        case 'FETCH_IND_ERR': 
             return {
-...state,
-isLoading: false,
-isError: true,
-error: action.payload.message
+                ...state,
+                isLoading: false,
+                isError: true,
+                error: action.payload.message
             };
-            
-                
-    
-        default:
-            break;
+        case 'UPDATE_LOADING':
+            return {
+                ...state,
+                isError: true,
+                error: "THERE IS AN ERROR"
+            };
+       default:
+            return state;
     }
-}
+};
