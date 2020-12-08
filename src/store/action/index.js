@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { error } from 'console';
-import { errorMonitor } from 'events';
+
 
 export const getDog = (url) => {
     return (dispatch) => {
