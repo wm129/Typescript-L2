@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
-//import thunk from 'redux-thunk';
+//import thunk from 'redux-thunk';//typescript => 型の宣言ファイルがないとうまく動かない　宣言用のファイルを追加（〜d.tsx)
 //import logger from 'redux-logger';
 
 
