@@ -1,24 +1,23 @@
-import React,{FC, useEffect} from 'react';
+import React,{FC, useState} from 'react';
 import axios from 'axios';
 
 
-
-
-const App: FC = (props) => {
-
-   // const DOG_API = 'https://dog.ceo/api/breed/Pembroke/images/random';//
-/*useEffect(() => {
-    props.
-}, []);
-*/
-
-
+const App: FC = () => {
+const [imageUrl, setImageUrl] = useState('');
+   
+const fetchData = () => {
+    axios.get('https://dog.ceo/api/breed/hound/images/random')
+    .then((response) => {
+        setImageUrl(response.data.message);
+    })
+    .catch((error) => {
+        console.error('ERR', error);
+    })
+};
     return(
         <>
-<div className="App">
-    <h1>DOGAPI 練習</h1>
-    
-</div>
+<img alt='dog' src={imageUrl} />
+<button onClick={fetchData}>取得</button>
         </>
     );
 };
